@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Homepagecontroller;
+use App\Http\Controllers\Inventariocontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Logincontroller;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,7 @@ use App\Http\Controllers\Logincontroller;
 Route::get('/', function () {
     return view('Login');
 });
+
+Route::get('/login',[Logincontroller::class,'create'])->name('login.index');
+Route::get('/home',[Homepagecontroller::class,'create'])->name('home.index');
+Route::get('/inventario',[Inventariocontroller::class,'create'])->name('invetario.index');
